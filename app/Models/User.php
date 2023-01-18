@@ -42,4 +42,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * Determine whether the user is cd or not.
+     *
+     *
+     * @return bool
+     */
+    public function cd()
+    {
+        return $this->role==="cd";
+    }
+    /**
+     * Determine whether the user is admin or not.
+     *
+     *
+     * @return bool
+     */
+    public function admin()
+    {
+        return $this->role==="admin";
+    }
 }

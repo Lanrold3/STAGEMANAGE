@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StageRequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index',["requestSend"=>0]);
 });
 
 Route::get('/dashboard', function () {
@@ -27,5 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//STAGEMANAGE
+//Route::get("",[EmailStageRequestValidatedController::class,""])->name("sendRequestValidateMail");
+//Route::get("",[EmailStageRequestValidatedController::class,""])->name("sendMassiveRequestValidateMail");
+Route::view("/home1","index",["requestSend"=>0])->name("home1");
+Route::get("/stage/request",function(){return view("request_form");})->name("stageRequest_form");
+Route::post("stage/request/store",[StageRequestController::class,"store"])->name("stageRequestSore");
 
 require __DIR__.'/auth.php';

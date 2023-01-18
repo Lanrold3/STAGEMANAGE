@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->primary("id");
             $table->string("name");
-            $table->integer("cd");
-            $table->foreign("cd")->references("id")->on("user")->onDelete("cascade")->onUpdate("restrict");
+            $table->unsignedBigInteger("cd");
+            $table->foreign("cd")->references("id")->on("users")->onDelete("cascade")->onUpdate("restrict");
             $table->timestamps();
         });
     }

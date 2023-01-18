@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('filliere__enterprises', function (Blueprint $table) {
+        Schema::create('filliere_enterprises', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->primary("id");
-            $table->integer("filliere_id");
-            $table->integer("enterprise_id");
+            $table->unsignedBigInteger("filliere_id");
+            $table->unsignedBigInteger("enterprise_id");
             $table->integer("number_place");
             $table->timestamps();
-            $table->foreign("filliere_id")->references("id")->on("filliere")->onUpdate("restrict")->onDelete("cascade");
-            $table->foreign("enterprise_id")->references("id")->on("enterprise")->onUpdate("restrict")->onDelete("cascade");
-
+            $table->foreign("enterprise_id")->references("id")->on("enterprises")->onUpdate("restrict")->onDelete("cascade");
+            $table->foreign("filliere_id")->references("id")->on("fillieres")->onUpdate("restrict")->onDelete("cascade");
         });
     }
 

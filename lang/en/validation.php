@@ -156,6 +156,39 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'mat1'=>[
+            'unique'=>'vous avez déjà fait une demande de stage'
+        ],
+        'mat2'=>[
+            'unique'=>'vous avez déjà fait une demande de stage'
+        ],
+        'mail1'=>[
+            'unique'=>'vous avez déjà fait une demande de stage'
+        ],
+        'mail2'=>[
+            'unique'=>'vous avez déjà fait une demande de stage'
+        ],
+        'mail1'=>[
+            'Email'=>'Ce champ doit être remplie avec un mail'
+        ],
+        'mail2'=>[
+            'Email'=>'Ce champ doit être remplie avec un mail'
+        ],
+        'mat1'=>[
+            'required'=>'Numéro matricule requis'
+        ],
+        'mat2'=>[
+            'required'=>'Numéro matricule requis'
+        ],
+        'mat1'=>[
+            'min'=>'Un matricule doit contenir au moins 8 chiffres'
+        ],
+        'mat2'=>[
+            'min'=>'Un matricule doit contenir au moins 8 chiffres'
+        ],
+        'mail1'=>[
+            'required'=>'Au moins un mail est requis pour vous notifier du succès de la demande'
+        ]
     ],
 
     /*

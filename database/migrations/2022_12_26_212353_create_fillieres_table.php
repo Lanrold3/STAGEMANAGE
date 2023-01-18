@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('fillieres', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->primary("id");
             $table->string("name");
-            $table->integer("departement_id");
-            $table->foreign("departement_id")->references("id")->on("departement")->onDelete("cascade")->onUpdate("restrict");
+            $table->unsignedBigInteger("departement_id");
+            $table->foreign("departement_id")->references("id")->on("departments")->onDelete("cascade")->onUpdate("restrict");
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("IFU");
             $table->string("Name");
+            $table->string("Localisation");
             $table->timestamps();
         });
     }

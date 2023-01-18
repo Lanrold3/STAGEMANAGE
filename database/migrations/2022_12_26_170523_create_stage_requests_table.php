@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('stage_requests', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->primary("id");
-            $table->string("etudiant_name");
-            $table->string("etudiant_mail");
-            $table->integer("enterprise_id");
-            $table->boolean("is_valid");
-            $table->foreign("enterprise_id")->references("id")->on("enterprise")->onDelete("cascade");
+            $table->string("mat1");
+            $table->string("mat2");
+            $table->string("mail1");
+            $table->string("mail2");
+            //$table->unsignedbigInteger("enterprise_id");
+            $table->boolean("is_valid")->default(0);
+            //$table->foreign("enterprise_id")->references("id")->on("enterprises")->onDelete("cascade")->onUpdate("restrict");
             $table->timestamps();
         });
     }

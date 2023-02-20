@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StageRequestController;
+use App\Http\Controllers\RecoverReport;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,5 +36,11 @@ Route::middleware('auth')->group(function () {
 Route::view("/home1","index",["requestSend"=>0])->name("home1");
 Route::get("/stage/request",function(){return view("request_form");})->name("stageRequest_form");
 Route::post("stage/request/store",[StageRequestController::class,"store"])->name("stageRequestSore");
+
+
+//RECOVER
+Route::get("/stage/report/get",function(){return view("report_form");})->name("stageReport_form");
+Route::post("stage/report/store",[RecoverReport::class,"store"])->name("Report_store");
+
 
 require __DIR__.'/auth.php';

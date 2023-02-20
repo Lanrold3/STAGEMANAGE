@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>STAGE ENEAM</title>
+  <title>@yield("title")</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -23,6 +23,7 @@
   'resources/assets/vendor/aos/aos.js',
   'resources/assets/vendor/bootstrap/css/bootstrap.min.css',
   'resources/assets/vendor/bootstrap-icons/bootstrap-icons.css',
+  'resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
   'resources/assets/vendor/boxicons/css/boxicons.min.css',
   'resources/assets/vendor/glightbox/css/glightbox.min.css',
   'resources/assets/vendor/remixicon/remixicon.css',
@@ -36,7 +37,7 @@
   'resources/assets/vendor/php-email-form/validate.js',
   'resources/assets/js/main.js',
 ])
-
+@yield("style")
   <!-- =======================================================
   * Template Name: Company - v4.7.0
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -57,7 +58,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="{{ @url("/") }}" class="active">Accueil</a></li>
 
           <li class="dropdown"><a href="#"><span>Demande de Stage</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -67,7 +68,7 @@
             </ul>
           </li>
 
-          <li><a href="#">Soumettre son Mémoire</a></li>
+          <li><a href="{{ @url("/stage/report/get") }}">Soumettre son Mémoire</a></li>
           <li><a href="#">En Savoir Plus</a></li>
 
         </ul>
@@ -83,10 +84,10 @@
 
     </div>
   </header><!-- End Header -->
-
-@yield("body")
-
-<footer id="footer">
+<div style="position:relative;margin-top:5rem;">
+  @yield("body")
+</div>
+<footer class="bottom" style="position:relative;margin-top:5rem;" id="footer">
 
 <div class="container d-md-flex py-4">
 

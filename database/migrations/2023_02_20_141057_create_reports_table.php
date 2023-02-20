@@ -13,15 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stage_requests', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements("id");
+            //$table->foreign("etudiant_id")->references("id")->on("etudiants")->onUpdate("restrict")->onDelete("cascade");
             $table->string("mat1");
             $table->string("mat2")->nullable()->default(null);
-            $table->string("mail1");
-            $table->string("mail2")->nullable()->default(null);
-            //$table->unsignedbigInteger("enterprise_id");
-            $table->boolean("is_valid")->default(0);
-            //$table->foreign("enterprise_id")->references("id")->on("enterprises")->onDelete("cascade")->onUpdate("restrict");
+            $table->string("report");
+            $table->string("filiere");
+            $table->string("enterprise");
+            $table->string("email");
+            $table->string("contact");
+            $table->string("report_master");
+
+
             $table->timestamps();
         });
     }
@@ -33,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stage_requests');
+        Schema::dropIfExists('reports');
     }
 };

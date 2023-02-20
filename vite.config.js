@@ -34,6 +34,7 @@ export default defineConfig({
                 'assets/vendor/waypoints/noframework.waypoints.js',
                 'assets/vendor/php-email-form/validate.js',
                 'assets/js/main.js',
+                'js/report_form.js',
             ],
             refresh: true,
         }),
